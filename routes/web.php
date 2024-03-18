@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/articulos',[ArticleController::class, 'index'])->name('articles.list');
+Route::get('/articulos/{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/form-articulos',[ArticleController::class, 'create'])->name('articles.form');
+
